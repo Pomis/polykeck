@@ -1,5 +1,6 @@
 package pomis.app.wineglass;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -8,6 +9,7 @@ import com.dd.processbutton.iml.ActionProcessButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AuthActivity extends AppCompatActivity {
     @BindView(R.id.vk_auth_butt)
@@ -25,8 +27,8 @@ public class AuthActivity extends AppCompatActivity {
 
     }
 
-    /*
+
     @OnClick(R.id.vk_auth_butt) void auth(){
-        vkButt.setProgress(50);
-    }*/
+        startActivity(new Intent(this, SearchActivity.class));
+    }
 }
