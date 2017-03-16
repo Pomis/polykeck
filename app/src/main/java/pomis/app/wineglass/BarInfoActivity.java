@@ -2,10 +2,10 @@ package pomis.app.wineglass;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import com.hsalf.smilerating.SmileRating;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BarInfoActivity extends AppCompatActivity {
+public class BarInfoActivity extends FragmentActivity {
     @BindView(R.id.bar_images_vp) ViewPager barAlbum;
     @BindView(R.id.smile_rating) SmileRating smileRating;
     static final int NUM_ITEMS = 5;
@@ -28,7 +28,7 @@ public class BarInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_info);
 
-        getSupportActionBar().setTitle("Noor");
+        getActionBar().setTitle("Noor");
         ButterKnife.bind(this);
 
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
