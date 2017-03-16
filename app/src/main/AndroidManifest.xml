@@ -14,7 +14,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,10 +34,12 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".LocatorActivity"
-            android:label="@string/title_activity_locator"></activity>
-        <activity android:name=".SearchActivity"></activity>
+            android:label="@string/title_activity_locator" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".BarInfoActivity"></activity>
     </application>
 
 </manifest>
