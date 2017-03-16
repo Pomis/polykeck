@@ -15,7 +15,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,10 @@
             android:name=".LocatorActivity"
             android:label="@string/title_activity_locator" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".BarInfoActivity"></activity>
+        <activity
+            android:name=".BarInfoActivity"
+            android:parentActivityName=".LocatorActivity"
+            android:theme="@style/Widget.AppCompat.Light.ActionBar"/>
     </application>
 
 </manifest>

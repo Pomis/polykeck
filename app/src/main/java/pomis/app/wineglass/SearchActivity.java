@@ -32,11 +32,11 @@ public class SearchActivity extends AppCompatActivity {
 
     boolean beerSet = true;
     boolean wineSet = false;
-    boolean cocktailSet = false;
+    boolean cocktailSet = true;
     boolean vodkaSet = false;
 
     boolean maleSet = false;
-    boolean femaleSet = false;
+    boolean femaleSet = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class SearchActivity extends AppCompatActivity {
         setAlpha();
     }
 
-    @OnClick(R.id.rl_drink)
+    @OnClick(R.id.fb_drink)
     void drink() {
         startActivity(new Intent(this, LocatorActivity.class));
     }

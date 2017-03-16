@@ -1,5 +1,6 @@
 package pomis.app.wineglass;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -62,7 +63,7 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-
+                startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
                 return false;
             }
         });

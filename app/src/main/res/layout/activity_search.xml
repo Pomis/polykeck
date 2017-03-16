@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp">
+        android:layout_above="@+id/rl_drink">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -327,15 +328,20 @@
     <RelativeLayout
         android:id="@+id/rl_drink"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
         android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/wanna_drink"
-            android:textColor="@color/colorAccent"
-            android:textSize="26dp" />
+        <com.dd.processbutton.FlatButton
+            android:id="@+id/fb_drink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/wine"
+            android:padding="16dp"
+            android:text="Хочу пить!"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            app:pb_colorNormal="@color/colorAccent"
+            app:pb_colorPressed="@color/colorAccentDark" />
     </RelativeLayout>
 </RelativeLayout>
