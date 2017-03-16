@@ -2,33 +2,38 @@ package pomis.app.wineglass;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.hsalf.smilerating.SmileRating;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BarInfoActivity extends FragmentActivity {
+public class BarInfoActivity extends AppCompatActivity {
     @BindView(R.id.bar_images_vp) ViewPager barAlbum;
-    static final int NUM_ITEMS = 6;
+    @BindView(R.id.smile_rating) SmileRating smileRating;
+    static final int NUM_ITEMS = 5;
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
-    public static final String[] IMAGE_NAME = {"eagle", "horse", "bonobo", "wolf", "owl", "bear",};
+    public static final String[] IMAGE_NAME = {"noor", "noor1", "noor2", "noor3", "noor4"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_info);
 
+        getSupportActionBar().setTitle("Noor");
         ButterKnife.bind(this);
 
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
         barAlbum.setAdapter(imageFragmentPagerAdapter);
+        smileRating.getSmileName(4);
     }
 
 
