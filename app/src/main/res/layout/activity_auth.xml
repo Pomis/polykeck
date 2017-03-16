@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_auth"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pomis.app.wineglass.AuthActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.dd.processbutton.FlatButton
+        android:id="@+id/vk_auth_butt"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:drawableLeft="@drawable/vk"
+        android:padding="16dp"
+        android:text="Войти через VK"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
+
+
+    <com.dd.processbutton.FlatButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/fb_auth_butt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/facebook"
+        android:padding="16dp"
+        android:text="Войти через Facebook"
+        android:textAllCaps="false"
+        android:textSize="24sp" />
+</LinearLayout>
