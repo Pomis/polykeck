@@ -158,6 +158,33 @@
                     android:orientation="horizontal"
                     android:layout_height="match_parent">
 
+                    <ImageView
+                        android:id="@+id/iv_beer"
+                        android:src="@drawable/beer"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_cocktail"
+                        android:layout_width="48dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/cocktail"
+                        android:tint="@color/colorAccent"
+                        android:layout_height="48dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_vodka"
+                        android:src="@drawable/vodka"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp" />
+
                 </LinearLayout>
 
             </RelativeLayout>
