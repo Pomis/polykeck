@@ -27,8 +27,13 @@ public class AuthActivity extends AppCompatActivity {
     }
 
 
+<<<<<<< HEAD
     @OnClick(R.id.vk_auth_butt) void auth() {
         Intent intent = new Intent(AuthActivity.this, BarInfoActivity.class);
         startActivity(intent);
+=======
+    @OnClick(R.id.vk_auth_butt) void auth(){
+        startActivity(new Intent(this, SearchActivity.class));
+>>>>>>> 707c7ae231a9bf8ec64e84cac15ff1cfff4aff1d
     }
 }
