@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class BarInfoActivity extends FragmentActivity {
     @BindView(R.id.bar_images_vp) ViewPager barAlbum;
     static final int NUM_ITEMS = 6;
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
-    ViewPager viewPager;
     public static final String[] IMAGE_NAME = {"eagle", "horse", "bonobo", "wolf", "owl", "bear",};
 
     @Override
@@ -25,8 +25,10 @@ public class BarInfoActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_info);
 
+        ButterKnife.bind(this);
+
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(imageFragmentPagerAdapter);
+        barAlbum.setAdapter(imageFragmentPagerAdapter);
     }
 
 
