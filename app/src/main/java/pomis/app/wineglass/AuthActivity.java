@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dd.processbutton.FlatButton;
-import com.dd.processbutton.iml.ActionProcessButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +27,8 @@ public class AuthActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.vk_auth_butt) void auth(){
-        startActivity(new Intent(this, SearchActivity.class));
+    @OnClick(R.id.vk_auth_butt) void auth() {
+        Intent intent = new Intent(AuthActivity.this, BarInfoActivity.class);
+        startActivity(intent);
     }
 }
