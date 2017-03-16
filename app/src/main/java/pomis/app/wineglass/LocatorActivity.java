@@ -1,5 +1,6 @@
 package pomis.app.wineglass;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -7,7 +8,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class LocatorActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -39,8 +42,31 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.6887287, 37.5728061), 15));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(55.688728, 37.572061))
+                .title("Killfish Bar")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(55.68282, 37.58053))
+                .title("Beertime Bar")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
+
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(55.68474, 37.57042))
+                .title("Crazy Bar")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
+                return false;
+            }
+        });
+
     }
 }

@@ -1,5 +1,6 @@
 package pomis.app.wineglass;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
@@ -31,11 +32,11 @@ public class SearchActivity extends AppCompatActivity {
 
     boolean beerSet = true;
     boolean wineSet = false;
-    boolean cocktailSet = false;
+    boolean cocktailSet = true;
     boolean vodkaSet = false;
 
     boolean maleSet = false;
-    boolean femaleSet = false;
+    boolean femaleSet = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,11 @@ public class SearchActivity extends AppCompatActivity {
     void switchFemale() {
         femaleSet = !femaleSet;
         setAlpha();
+    }
+
+    @OnClick(R.id.fb_drink)
+    void drink() {
+        startActivity(new Intent(this, LocatorActivity.class));
     }
 
     void setAlpha() {
