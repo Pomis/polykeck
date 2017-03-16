@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Wineglass</string>
     <string name="title_activity_locator">Карта</string>
+    <string name="wanna_drink">Хочу пить!</string>
+    <string name="with_who">С кем?</string>
+    <string name="where">Где?</string>
+    <string name="when">Когда?</string>
+    <string name="what">Что?</string>
 </resources>
