@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Wineglass</string>
+    <string name="title_activity_locator">Карта</string>
 </resources>
