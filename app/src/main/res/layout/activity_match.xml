@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_match"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pomis.app.wineglass.MatchActivity">
+
+
+    <TextView
+        android:text="Ура!"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_user"
+            android:layout_width="100dp"
+            android:layout_margin="16dp"
+            android:layout_height="100dp"
+            android:src="@drawable/roman" />
+
+        <ImageView
+            android:src="@drawable/cross"
+            android:layout_width="64dp"
+            android:layout_height="64dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_mihail"
+            android:layout_width="100dp"
+            android:layout_margin="16dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profile_photo" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="160dp"
+        android:text="Михаил согласен выпить с Вами."
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <com.dd.processbutton.FlatButton
+        android:id="@+id/vk_auth_butt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/vk"
+        android:padding="16dp"
+        android:layout_marginTop="220dp"
+        android:text="Отправить сообщение"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:pb_colorNormal="@color/colorAccent"
+        app:pb_colorPressed="@color/colorAccentDark" />
+
+    <com.dd.processbutton.FlatButton
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/call"
+        android:padding="16dp"
+        android:layout_marginTop="300dp"
+        android:text="Позвонить"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:pb_colorNormal="@color/colorAccent"
+        app:pb_colorPressed="@color/colorAccentDark" />
+
+</RelativeLayout>
