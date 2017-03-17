@@ -45,6 +45,24 @@ public class PersonInfoActivity extends AppCompatActivity {
     }
 
     private void init() {
+        sivCocktail.setIconEnabled(false);
+        sivWine.setIconEnabled(false);
+        rlCocktail.setAlpha(0.2f);
+        rlWine.setAlpha(0.2f);
+        nameTV.setText(getIntent().getStringExtra("name"));
+        if(getIntent().getStringExtra("name").contains("Марина")){
+            backPhoto.setImageDrawable(getResources().getDrawable(R.drawable.marina));
+            profilePhoto.setImageDrawable(getResources().getDrawable(R.drawable.marina));
+            rlWine.setAlpha(1f);
+            rlCocktail.setAlpha(1f);
+            rlBeer.setAlpha(0.2f);
+            rlVodka.setAlpha(0.2f);
+            sivWine.setIconEnabled(true);
+            sivCocktail.setIconEnabled(true);
+            sivVodka.setIconEnabled(false);
+            sivBeer.setIconEnabled(false);
+
+        }
         Bitmap backPhotoBmp = BitmapFactory.decodeResource(this.getResources(),
                 R.drawable.profile_photo);
         Blurry.with(this)
@@ -53,20 +71,19 @@ public class PersonInfoActivity extends AppCompatActivity {
                 .from(backPhotoBmp)
                 .into(backPhoto);
         backPhoto.setColorFilter(new LightingColorFilter(0xFF7F7F7F, 0x00000000)); //затемняем фото
-        sivCocktail.setIconEnabled(false);
-        sivWine.setIconEnabled(false);
-        rlCocktail.setAlpha(0.2f);
-        rlWine.setAlpha(0.2f);
 
     }
 
     @OnClick(R.id.profile_image) void viewPhotos(){
-        Intent intent = new Intent(PersonInfoActivity.this, PhotoViewActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, PhotoViewActivity.class).putExtra("name", getIntent().getStringExtra("name")));
     }
     @OnClick(R.id.like_cb) void likeEvent(){
         Toast likeToast = Toast.makeText(this, "Ждите отклика!", Toast.LENGTH_SHORT);
         likeToast.show();
+        likeCB.setEnabled(false);
+        likeCB.setAlpha(0.2f);
+        dislikeCB.setEnabled(false);
+        dislikeCB.setAlpha(0.2f);
         startService(new Intent(this, MyService.class));
     }
     @OnClick(R.id.dislike_cb) void dislikeEvent(){

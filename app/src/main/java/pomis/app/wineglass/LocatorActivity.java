@@ -113,7 +113,7 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
                 if (marker.getSnippet() != null) {
                     startActivity(new Intent(getApplicationContext(), BarInfoActivity.class).putExtra("name", marker.getTitle()));
                 } else {
-                    startActivity(new Intent(getApplicationContext(), PersonInfoActivity.class));
+                    startActivity(new Intent(getApplicationContext(), PersonInfoActivity.class).putExtra("name", marker.getTitle()));
                 }
             }
         });
