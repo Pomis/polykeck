@@ -1,8 +1,18 @@
 package pomis.app.wineglass;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,9 +23,20 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
+import pomis.app.wineglass.Models.Bar;
+import pomis.app.wineglass.Models.Codrinker;
+
 public class LocatorActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private ArrayList<Bar> barList;
+    private ArrayList<Codrinker> codrinkerList;
+
+    private static final String BAR = "bar";
+    private static final String CODRINKER = "codrinker";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,45 +49,99 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    void initBars() {
+        barList = new ArrayList<>();
+
+        barList.add(new Bar(
+                "Killfish bar",
+                55.688728, 37.572061
+        ));
+
+        barList.add(new Bar(
+                "Beertime Bar",
+                55.68282, 37.58053
+        ));
+
+        barList.add(new Bar(
+                "Crazy bar",
+                55.68474, 37.57042
+        ));
+    }
+
+    void initCodrinkers() {
+        codrinkerList = new ArrayList<>();
+
+        codrinkerList.add(new Codrinker(
+                "Марина", 20,
+                55.684, 37.56542
+        ));
+
+        codrinkerList.add(new Codrinker(
+                "Михаил", 21,
+                55.671, 37.59542
+        ));
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        initBars();
+        initCodrinkers();
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.6887287, 37.5728061), 15));
 
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(55.688728, 37.572061))
-                .title("Killfish Bar")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
-
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(55.68282, 37.58053))
-                .title("Beertime Bar")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
+        drawBarMarkers();
+        drawCodrinkerMarkers();
 
 
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(55.68474, 37.57042))
-                .title("Crazy Bar")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar)));
-
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
-            public boolean onMarkerClick(Marker marker) {
-                startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
-                return false;
+            public void onInfoWindowClick(Marker marker) {
+                if (marker.getSnippet()!=null) {
+                    startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
+                } else {
+                    startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
+                }
             }
         });
 
+    }
+
+    private void drawCodrinkerMarkers() {
+        for (Codrinker codrinker : codrinkerList)
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(codrinker.lat, codrinker.lon))
+                    .title(codrinker.name +", "+codrinker.age)
+                    .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.noor))));
+    }
+
+    private void drawBarMarkers() {
+        for (Bar bar : barList)
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(bar.lat, bar.lon))
+                    .title(bar.name)
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.bar))
+                    .snippet(BAR));
+
+    }
+
+    private Bitmap getMarkerBitmapFromView(@DrawableRes int resId) {
+
+        View customMarkerView = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.marker_codrinker, null);
+        ImageView markerImageView = (ImageView) customMarkerView.findViewById(R.id.profile_image);
+        markerImageView.setImageResource(resId);
+        customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        customMarkerView.layout(0, 0, customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight());
+        customMarkerView.buildDrawingCache();
+        Bitmap returnedBitmap = Bitmap.createBitmap(customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        Drawable drawable = customMarkerView.getBackground();
+        if (drawable != null)
+            drawable.draw(canvas);
+        customMarkerView.draw(canvas);
+        return returnedBitmap;
     }
 }
