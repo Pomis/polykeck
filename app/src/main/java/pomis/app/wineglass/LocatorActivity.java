@@ -38,6 +38,9 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
     private static final String CODRINKER = "codrinker";
 
 
+    private boolean maleSet;
+    private boolean femaleSet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,13 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        readIntent();
+    }
+
+    private void readIntent() {
+        maleSet = getIntent().getBooleanExtra("male", false);
+        femaleSet = getIntent().getBooleanExtra("female", false);
     }
 
 
@@ -73,12 +83,14 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
 
         codrinkerList.add(new Codrinker(
                 "Марина", 20, Codrinker.Gender.FEMALE,
-                55.684, 37.56542
+                55.684, 37.56542,
+                R.drawable.marina
         ));
 
         codrinkerList.add(new Codrinker(
                 "Михаил", 21, Codrinker.Gender.MALE,
-                55.671, 37.59542
+                55.671, 37.59542,
+                R.drawable.profile_photo
         ));
     }
 
@@ -98,8 +110,8 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                if (marker.getSnippet()!=null) {
-                    startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
+                if (marker.getSnippet() != null) {
+                    startActivity(new Intent(getApplicationContext(), BarInfoActivity.class).putExtra("name", marker.getTitle()));
                 } else {
                     startActivity(new Intent(getApplicationContext(), PersonInfoActivity.class));
                 }
@@ -110,10 +122,12 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
 
     private void drawCodrinkerMarkers() {
         for (Codrinker codrinker : codrinkerList)
-            mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(codrinker.lat, codrinker.lon))
-                    .title(codrinker.name +", "+codrinker.age)
-                    .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.noor))));
+            if (maleSet && codrinker.gender == Codrinker.Gender.MALE ||
+                    femaleSet && codrinker.gender == Codrinker.Gender.FEMALE)
+                mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(codrinker.lat, codrinker.lon))
+                        .title(codrinker.name + ", " + codrinker.age)
+                        .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(codrinker.photo))));
     }
 
     private void drawBarMarkers() {

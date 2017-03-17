@@ -110,7 +110,7 @@ public class SearchActivity extends AppCompatActivity {
 
     @OnClick(R.id.fb_drink)
     void drink() {
-        startActivity(new Intent(this, LocatorActivity.class));
+        startActivity(new Intent(this, LocatorActivity.class).putExtra("male", maleSet).putExtra("female", femaleSet));
     }
 
     void setAlpha() {

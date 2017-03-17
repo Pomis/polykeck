@@ -19,15 +19,13 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/bar_images_vp"
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="340dp">
 
             </android.support.v4.view.ViewPager>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/border"
                 android:orientation="vertical">
 
                 <RelativeLayout
