@@ -74,7 +74,7 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
 
         barList.add(new Bar(
                 "Crazy bar",
-                55.68474, 37.57042
+                55.68774, 37.57042
         ));
     }
 
@@ -89,7 +89,7 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
 
         codrinkerList.add(new Codrinker(
                 "Михаил", 21, Codrinker.Gender.MALE,
-                55.671, 37.59542,
+                55.681, 37.57542,
                 R.drawable.profile_photo
         ));
     }
