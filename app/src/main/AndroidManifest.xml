@@ -44,7 +44,8 @@
             android:name=".BarInfoActivity"
             android:parentActivityName=".LocatorActivity"
             android:theme="@style/Widget.AppCompat.Light.ActionBar" />
-        <activity android:name=".PersonInfoActivity"></activity>
+        <activity android:name=".PersonInfoActivity" />
+        <activity android:name=".PhotoViewActivity"></activity>
     </application>
 
 </manifest>

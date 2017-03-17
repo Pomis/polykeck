@@ -91,20 +91,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/iv_beer"
+            <com.github.zagum.switchicon.SwitchIconView
+                android:id="@+id/siv_beer"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/beer"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/colorAccent"
+                app:si_animation_duration="500"
+                app:si_enabled="true"
+                app:si_disabled_color="@color/colorAccent"
+                app:si_tint_color="@color/colorAccent" />
+
 
             <TextView
                 android:id="@+id/tv_beer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_beer"
+                android:layout_below="@id/siv_beer"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:text="Пиво"
@@ -117,20 +122,24 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/iv_wine"
+            <com.github.zagum.switchicon.SwitchIconView
+                android:id="@+id/siv_wine"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/wine"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/colorAccent"
+                app:si_animation_duration="500"
+                app:si_enabled="true"
+                app:si_disabled_color="@color/colorAccent"
+                app:si_tint_color="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/tv_wine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_wine"
+                android:layout_below="@id/siv_wine"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:text="Вино"
@@ -143,21 +152,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/iv_cocktail"
+            <com.github.zagum.switchicon.SwitchIconView
+                android:id="@+id/siv_cocktail"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/cocktail"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/colorAccent"
+                app:si_animation_duration="500"
+                app:si_enabled="true"
+                app:si_disabled_color="@color/colorAccent"
+                app:si_tint_color="@color/colorAccent" />
 
 
             <TextView
                 android:id="@+id/tv_cocktail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_cocktail"
+                android:layout_below="@id/siv_cocktail"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:text="Коктейль"
@@ -170,21 +183,26 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/iv_vodka"
+            <com.github.zagum.switchicon.SwitchIconView
+                android:id="@+id/siv_vodka"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/vodka"
-                android:tint="@color/colorAccent" />
+                android:tint="@color/colorAccent"
+                app:si_animation_duration="500"
+                app:si_enabled="true"
+                app:si_disabled_color="@color/colorAccent"
+                app:si_tint_color="@color/colorAccent" />
+
 
 
             <TextView
                 android:id="@+id/tv_vodka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_vodka"
+                android:layout_below="@id/siv_vodka"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:text="Водка"
