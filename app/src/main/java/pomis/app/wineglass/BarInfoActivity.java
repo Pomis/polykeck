@@ -33,7 +33,11 @@ public class BarInfoActivity extends FragmentActivity {
 
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
         barAlbum.setAdapter(imageFragmentPagerAdapter);
-        smileRating.getSmileName(4);
+        smileRating.setNameForSmile(0,"Ужасно");
+        smileRating.setNameForSmile(1,"Плохо");
+        smileRating.setNameForSmile(2,"Нормально");
+        smileRating.setNameForSmile(3,"Хорошо");
+        smileRating.setNameForSmile(4,"Отлично");
     }
 
 
