@@ -72,12 +72,12 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
         codrinkerList = new ArrayList<>();
 
         codrinkerList.add(new Codrinker(
-                "Марина", 20,
+                "Марина", 20, Codrinker.Gender.FEMALE,
                 55.684, 37.56542
         ));
 
         codrinkerList.add(new Codrinker(
-                "Михаил", 21,
+                "Михаил", 21, Codrinker.Gender.MALE,
                 55.671, 37.59542
         ));
     }
@@ -101,7 +101,7 @@ public class LocatorActivity extends FragmentActivity implements OnMapReadyCallb
                 if (marker.getSnippet()!=null) {
                     startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
                 } else {
-                    startActivity(new Intent(getApplicationContext(), BarInfoActivity.class));
+                    startActivity(new Intent(getApplicationContext(), PersonInfoActivity.class));
                 }
             }
         });

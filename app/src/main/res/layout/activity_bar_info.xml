@@ -3,17 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorWhite"
+    android:orientation="vertical"
     tools:context="pomis.app.wineglass.BarInfoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/bar_images_vp"
                 android:layout_width="match_parent"
@@ -29,9 +31,9 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
 
                     <com.hsalf.smilerating.SmileRating
                         android:id="@+id/smile_rating"
@@ -52,13 +54,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
-                        android:src="@drawable/map_marker" />
+                        android:src="@drawable/map_marker"
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:text="Тверская ул., 23/12, Москва"
                         android:textColor="#000000"
@@ -76,14 +79,15 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
-                        android:src="@drawable/clock" />
+                        android:src="@drawable/clock"
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:text="Открыто до 24:00"
                         android:textColor="#000000"
@@ -101,13 +105,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
-                        android:src="@drawable/phone" />
+                        android:src="@drawable/phone"
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:text="8 (903) 136-76-86"
                         android:textColor="#000000"
@@ -117,8 +122,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -126,14 +131,15 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
-                        android:src="@drawable/earth" />
+                        android:src="@drawable/earth"
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:text="http://www.noorbar.com/"
                         android:textColor="#000000"

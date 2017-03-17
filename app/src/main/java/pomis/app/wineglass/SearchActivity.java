@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 
+import com.github.zagum.switchicon.SwitchIconView;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -29,13 +31,31 @@ public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.rl_female)
     RelativeLayout rlFemale;
 
+    @BindView(R.id.siv_vodka)
+    SwitchIconView sivVodka;
+
+    @BindView(R.id.siv_beer)
+    SwitchIconView sivBeer;
+
+    @BindView(R.id.siv_wine)
+    SwitchIconView sivWine;
+
+    @BindView(R.id.siv_cocktail)
+    SwitchIconView sivCocktail;
+
+    @BindView(R.id.siv_male)
+    SwitchIconView sivMale;
+
+    @BindView(R.id.siv_female)
+    SwitchIconView sivFemale;
+
 
     boolean beerSet = true;
-    boolean wineSet = false;
+    boolean wineSet = true;
     boolean cocktailSet = true;
-    boolean vodkaSet = false;
+    boolean vodkaSet = true;
 
-    boolean maleSet = false;
+    boolean maleSet = true;
     boolean femaleSet = true;
 
     @Override
@@ -49,36 +69,42 @@ public class SearchActivity extends AppCompatActivity {
     @OnClick(R.id.rl_vodka)
     void switchVodka() {
         vodkaSet = !vodkaSet;
+        sivVodka.switchState();
         setAlpha();
     }
 
     @OnClick(R.id.rl_beer)
     void switchBeer() {
         beerSet = !beerSet;
+        sivBeer.switchState();
         setAlpha();
     }
 
     @OnClick(R.id.rl_cocktail)
     void switchCocktail() {
         cocktailSet = !cocktailSet;
+        sivCocktail.switchState();
         setAlpha();
     }
 
     @OnClick(R.id.rl_wine)
     void switchWine() {
         wineSet = !wineSet;
+        sivWine.switchState();
         setAlpha();
     }
 
     @OnClick(R.id.rl_male)
     void switchMale() {
         maleSet = !maleSet;
+        sivMale.switchState();
         setAlpha();
     }
 
     @OnClick(R.id.rl_female)
     void switchFemale() {
         femaleSet = !femaleSet;
+        sivFemale.switchState();
         setAlpha();
     }
 
