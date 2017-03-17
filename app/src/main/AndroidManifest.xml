@@ -45,7 +45,13 @@
             android:parentActivityName=".LocatorActivity"
             android:theme="@style/Widget.AppCompat.Light.ActionBar" />
         <activity android:name=".PersonInfoActivity" />
-        <activity android:name=".PhotoViewActivity"></activity>
+        <activity android:name=".PhotoViewActivity" />
+        <activity android:name=".MatchActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

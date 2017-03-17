@@ -67,9 +67,9 @@ public class PersonInfoActivity extends AppCompatActivity {
     @OnClick(R.id.like_cb) void likeEvent(){
         Toast likeToast = Toast.makeText(this, "Ждите отклика!", Toast.LENGTH_SHORT);
         likeToast.show();
+        startService(new Intent(this, MyService.class));
     }
     @OnClick(R.id.dislike_cb) void dislikeEvent(){
-        Intent intent = new Intent(PersonInfoActivity.this, LocatorActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

@@ -11,7 +11,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!-- android:tint="#CC000000" -->
 
         <ImageView
             android:id="@+id/profile_image_back"
@@ -38,7 +37,7 @@
             android:layout_height="76dp"
             android:layout_gravity="center"
             android:layout_marginRight="140dp"
-            android:src="@drawable/thumb_up"
+            android:src="@drawable/wine"
             android:tint="@color/colorWhite"
             app:cb_color="@color/colorAccent" />
 
@@ -48,16 +47,15 @@
             android:layout_height="76dp"
             android:layout_gravity="center"
             android:layout_marginLeft="140dp"
-            android:src="@drawable/thumb_down"
+            android:src="@drawable/dislike"
             android:tint="@color/colorWhite"
-            app:cb_color="@color/colorAccent" />
+            app:cb_color="@color/colorGray" />
 
         <TextView
             android:id="@+id/name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="120dp"
             android:text="Михаил, 21"
             android:textColor="@color/colorWhite"
@@ -70,11 +68,12 @@
         android:id="@+id/preference_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Хочу выпить"
-        android:textColor="#000"
+        android:text="Хочет выпить сегодня через два часа."
+        android:textColor="@color/colorGray"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -95,13 +94,12 @@
                 android:id="@+id/siv_beer"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/beer"
                 android:tint="@color/colorAccent"
                 app:si_animation_duration="500"
-                app:si_enabled="true"
                 app:si_disabled_color="@color/colorAccent"
+                app:si_enabled="true"
                 app:si_tint_color="@color/colorAccent" />
 
 
@@ -126,13 +124,12 @@
                 android:id="@+id/siv_wine"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/wine"
                 android:tint="@color/colorAccent"
                 app:si_animation_duration="500"
-                app:si_enabled="true"
                 app:si_disabled_color="@color/colorAccent"
+                app:si_enabled="true"
                 app:si_tint_color="@color/colorAccent" />
 
             <TextView
@@ -156,13 +153,12 @@
                 android:id="@+id/siv_cocktail"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/cocktail"
                 android:tint="@color/colorAccent"
                 app:si_animation_duration="500"
-                app:si_enabled="true"
                 app:si_disabled_color="@color/colorAccent"
+                app:si_enabled="true"
                 app:si_tint_color="@color/colorAccent" />
 
 
@@ -187,15 +183,13 @@
                 android:id="@+id/siv_vodka"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/vodka"
                 android:tint="@color/colorAccent"
                 app:si_animation_duration="500"
-                app:si_enabled="true"
                 app:si_disabled_color="@color/colorAccent"
+                app:si_enabled="true"
                 app:si_tint_color="@color/colorAccent" />
-
 
 
             <TextView
@@ -209,4 +203,16 @@
                 android:textColor="@color/colorAccent" />
         </RelativeLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Контактная информация будет доступна, если пользователь согласится выпить с вами."
+        android:textColor="@color/colorGray"
+        android:textSize="16sp" />
 </LinearLayout>
