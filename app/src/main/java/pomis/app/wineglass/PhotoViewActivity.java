@@ -16,9 +16,11 @@ import butterknife.ButterKnife;
 
 public class PhotoViewActivity extends AppCompatActivity {
     @BindView(R.id.vp_profile_images) ViewPager vpProfilePhoto;
-    static final int NUM_ITEMS = 3;
+    static int NUM_ITEMS = 3;
     ImageFragmentPagerAdapter imageFragmentPagerAdapter;
-    public static final String[] IMAGE_NAME = {"profile_photo", "profile_photo1", "profile_photo2"};
+    public static String name;
+    public static final String[] IMAGESMIXOIL = {"profile_photo", "profile_photo1", "profile_photo2"};
+    public static final String[] IMAGESMARINA = {"marina"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,12 @@ public class PhotoViewActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        name = getIntent().getStringExtra("name");
+        if(name.contains("Марина")){
+            NUM_ITEMS = 1;
+        }else {
+            NUM_ITEMS = 3;
+        }
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
         vpProfilePhoto.setAdapter(imageFragmentPagerAdapter);
     }
@@ -56,7 +64,12 @@ public class PhotoViewActivity extends AppCompatActivity {
             ImageView imageView = (ImageView) swipeView.findViewById(R.id.imageView);
             Bundle bundle = getArguments();
             int position = bundle.getInt("position");
-            String imageFileName = IMAGE_NAME[position];
+            String imageFileName;
+            if(name.contains("Марина")){
+                imageFileName = IMAGESMARINA[position];
+            }else {
+                imageFileName = IMAGESMIXOIL[position];
+            }
             int imgResId = getResources().getIdentifier(imageFileName, "drawable", "pomis.app.wineglass");
             imageView.setImageResource(imgResId);
             return swipeView;
