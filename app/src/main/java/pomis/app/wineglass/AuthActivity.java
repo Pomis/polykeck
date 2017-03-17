@@ -33,7 +33,7 @@ public class AuthActivity extends AppCompatActivity {
         finish();
     }
     @OnClick(R.id.fb_auth_butt) void authFb() {
-        Intent intent = new Intent(AuthActivity.this, BarInfoActivity.class);
+        Intent intent = new Intent(AuthActivity.this, PersonInfoActivity.class);
         startActivity(intent);
         finish();
     }

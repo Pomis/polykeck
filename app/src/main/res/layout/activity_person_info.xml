@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context="pomis.app.wineglass.PersonInfoActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- android:tint="#CC000000" -->
+
+        <ImageView
+            android:id="@+id/profile_image_back"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_photo"
+            android:tint="#383838"
+            android:tintMode="screen" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="196dp"
+            android:layout_height="196dp"
+            android:layout_gravity="center|center_vertical"
+            android:src="@drawable/profile_photo"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/like_cb"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="140dp"
+            android:src="@drawable/thumb_up"
+            android:tint="@color/colorWhite"
+            app:cb_color="@color/colorAccent" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/dislike_cb"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="140dp"
+            android:src="@drawable/thumb_down"
+            android:tint="@color/colorWhite"
+            app:cb_color="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="120dp"
+            android:text="Михаил, 21"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/preference_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Хочу выпить"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_beer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_beer"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/beer"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/tv_beer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_beer"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="Пиво"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_wine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_wine"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/wine"
+                android:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/tv_wine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_wine"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="Вино"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_cocktail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_cocktail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/cocktail"
+                android:tint="@color/colorAccent" />
+
+
+            <TextView
+                android:id="@+id/tv_cocktail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_cocktail"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="Коктейль"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_vodka"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_vodka"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/vodka"
+                android:tint="@color/colorAccent" />
+
+
+            <TextView
+                android:id="@+id/tv_vodka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_vodka"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="Водка"
+                android:textColor="@color/colorAccent" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

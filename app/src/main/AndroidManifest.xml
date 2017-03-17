@@ -43,7 +43,8 @@
         <activity
             android:name=".BarInfoActivity"
             android:parentActivityName=".LocatorActivity"
-            android:theme="@style/Widget.AppCompat.Light.ActionBar"/>
+            android:theme="@style/Widget.AppCompat.Light.ActionBar" />
+        <activity android:name=".PersonInfoActivity"></activity>
     </application>
 
 </manifest>
