@@ -1,17 +1,22 @@
 package pomis.app.wineglass;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.github.zagum.switchicon.SwitchIconView;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
     @BindView(R.id.rl_vodka)
     RelativeLayout rlVodka;
@@ -49,6 +54,11 @@ public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.siv_female)
     SwitchIconView sivFemale;
 
+    @BindView(R.id.ll_when)
+    LinearLayout llWhen;
+
+    @BindView(R.id.tv_time)
+    TextView tvTime;
 
     boolean beerSet = true;
     boolean wineSet = true;
@@ -120,5 +130,23 @@ public class SearchActivity extends AppCompatActivity {
         rlWine.setAlpha(wineSet ? 1f : 0.2f);
         rlMale.setAlpha(maleSet ? 1f : 0.2f);
         rlFemale.setAlpha(femaleSet ? 1f : 0.2f);
+    }
+
+    @OnClick(R.id.ll_when)
+    void setTime() {
+        Calendar now = Calendar.getInstance();
+        TimePickerDialog dpd = TimePickerDialog.newInstance(
+                SearchActivity.this,
+                now.get(Calendar.HOUR),
+                now.get(Calendar.MINUTE),
+                now.get(Calendar.SECOND),
+                true
+        );
+        dpd.show(getFragmentManager(), "Datepickerdialog");
+    }
+
+    @Override
+    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+        tvTime.setText("Сегодня в " + hourOfDay + ":" + minute);
     }
 }
