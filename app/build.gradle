@@ -34,11 +34,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.github.markushi:circlebutton:1.1'
     compile 'jp.wasabeef:blurry:2.1.0'
-<<<<<<< HEAD
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
-=======
     compile 'com.github.zagum:Android-SwitchIcon:1.3.2'
->>>>>>> 7c47653fb489741d29acf07e3a9c573e59248b70
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }
