@@ -28,7 +28,7 @@ public class BarInfoActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_info);
 
-        getActionBar().setTitle("Noor");
+        getActionBar().setTitle(getIntent().getStringExtra("name"));
         ButterKnife.bind(this);
 
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getSupportFragmentManager());
