@@ -1,10 +1,12 @@
 package pomis.app.wineglass;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -46,6 +48,14 @@ public class PersonInfoActivity extends AppCompatActivity {
         backPhoto.setColorFilter(new LightingColorFilter(0xFF7F7F7F, 0x00000000)); //затемняем фото
         rlCocktail.setAlpha(0.2f);
         rlWine.setAlpha(0.2f);
+
+        profilePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonInfoActivity.this, PhotoViewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
