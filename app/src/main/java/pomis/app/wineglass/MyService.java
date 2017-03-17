@@ -16,6 +16,7 @@ public class MyService extends Service {
                 try {
                     Thread.sleep(4500);
                     startActivity(new Intent(getApplicationContext(), MatchActivity.class));
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
